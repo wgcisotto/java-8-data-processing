@@ -14,7 +14,7 @@ public class CreatingSpliterator {
 
     public static void main(String[] args) {
 
-        Path path = Paths.get("people.txt");
+        Path path = Paths.get("files/people.txt");
 
        try (Stream<String> lines = Files.lines(path)){
 
@@ -25,13 +25,9 @@ public class CreatingSpliterator {
 
            people.forEach(System.out::println);
 
-
-
        }catch (IOException ioe){
            ioe.printStackTrace();
        }
-
-
     }
 
 }
