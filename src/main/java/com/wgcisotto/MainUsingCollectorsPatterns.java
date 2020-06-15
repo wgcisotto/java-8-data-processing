@@ -33,24 +33,6 @@ public class MainUsingCollectorsPatterns {
 
         Function<String, Integer> score =
                 word -> word.chars().map(letter -> scrabbleENScore[letter - 'a']).sum();
-//
-//        ToIntFunction<String> intScore =
-//                word -> word.chars().map(letter -> scrabbleENScore[letter - 'a']).sum();
-//
-//        System.out.println("Score of hello: " + intScore.applyAsInt("hello"));
-//
-//        String bestWord = shakespeare.stream()
-//                .filter(scrabbleWords::contains)
-//                .max(Comparator.comparing(score)).get();
-//
-//        System.out.println("Best work of shakespeare : " + bestWord);
-//
-//        IntSummaryStatistics intSummaryStatistics =
-//                shakespeare.stream().parallel()
-//                .filter(scrabbleWords::contains)
-//                .mapToInt(intScore)
-//                .summaryStatistics();
-
 
         /*Collectors*/
 
