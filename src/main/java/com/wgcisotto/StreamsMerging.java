@@ -25,7 +25,6 @@ public class StreamsMerging {
 
 //        System.out.println("# Stream Of Streams Merged : " + streamOfStreamsMerged.count());
 
-
 //        Stream<String> streamOfLinesMerged =
 //                Stream.of(stream1, stream2, stream3, stream4)
 //                        .flatMap(Function.identity());

@@ -1,4 +1,4 @@
-package com.wgcisotto;
+package com.wgcisotto.spliterator;
 
 import com.wgcisotto.model.Person;
 

@@ -18,16 +18,11 @@ public class PlayWithFlatMap {
         Stream<Stream<String>> stringStream1 = Stream.of(a, b, c);
 
 //        Stream<String> stringStream2 = Stream.of(a, b, c).flatMap(stream -> stream);
-
         Stream<String> stringStream3 = Stream.of(a, b, c)
                 .flatMap(Function.identity());
 
 //        stringStream2.forEach(System.out::println);
-
         stringStream3.forEach(System.out::println);
-
-
-        HashSet<Person> hp =  new HashSet<>();
 
     }
 

@@ -1,7 +1,7 @@
 package com.wgcisotto;
 
-import com.wgcisotto.model.City;
 import com.wgcisotto.model.Person;
+import com.wgcisotto.spliterator.PeopleSpliterator;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -21,15 +21,12 @@ public class StreamOfNumbers {
                 .filter(ages -> ages > 20)
                 .average();
 
-
         LongStream streamsOfLongs = LongStream.of(1L, 2L, 3L, 4L);
         Stream<Long> streamsOfLongsBoxed = LongStream.of(1L, 2L, 3L, 4L).boxed();
         Stream<Long> streamsOfLongsBoxed2 = LongStream.of(1L, 2L, 3L, 4L).mapToObj(l -> l);
 
 //        List<City> cities = people.map(p -> new City(p.getCity()))
 //                .collect(Collectors.toList());
-
-
         IntStream intStream = IntStream.of(1, 2, 3, 4, 5);
 
 //        int sum = intStream.sum();

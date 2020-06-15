@@ -1,6 +1,7 @@
 package com.wgcisotto;
 
 import com.wgcisotto.model.Person;
+import com.wgcisotto.spliterator.PeopleSpliterator;
 
 import java.io.IOException;
 import java.nio.file.Files;
