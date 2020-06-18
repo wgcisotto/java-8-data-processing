@@ -73,13 +73,11 @@ public class MainUsingCollectorsPatterns {
                             .entrySet()
                             .stream() //Map.entry<Integer, Long>
                             .mapToLong(
-                                    entry ->
-                                            Long.max(
-                                            entry.getValue() -
-                                                    (long) scrabbleENDistribution[entry.getKey() - 'a'],
-                                                    0L)
-                            )
-                            .sum();
+                                    entry -> Long.max(
+                                            entry.getValue() - (long) scrabbleENDistribution[entry.getKey() - 'a'],
+                                            0L
+                                    )
+                            ).sum();
 
         System.out.println(" # of blanks for whizzing " + nBlanks.apply("whizzing"));
 
@@ -87,13 +85,9 @@ public class MainUsingCollectorsPatterns {
                 word -> histoWord.apply(word)
                         .entrySet()
                         .stream() //Map.entry<Integer, Long>
-                        .mapToInt(
-                                entry ->
-                                        scrabbleENScore[entry.getKey() - 'a'] *
-                                                Integer.min(entry.getValue().intValue(),
-                                                        scrabbleENDistribution[entry.getKey() - 'a'])
-                        )
-                        .sum();
+                        .mapToInt(entry -> scrabbleENScore[entry.getKey() - 'a'] *
+                                                Integer.min(entry.getValue().intValue(), scrabbleENDistribution[entry.getKey() - 'a'])
+                        ).sum();
 
         System.out.println(" # score for whizzing " + score.apply("whizzing"));
         System.out.println(" # score2 for whizzing " + score2.apply("whizzing"));
@@ -102,14 +96,10 @@ public class MainUsingCollectorsPatterns {
         shakespeare.stream()
                         .filter(scrabbleWords::contains)
                         .filter(word -> nBlanks.apply(word) <= 2)
-                        .collect(
-                                Collectors.groupingBy(score2)
-                        )
+                        .collect(Collectors.groupingBy(score2))
                         .entrySet()
                         .stream()
-                        .sorted(
-                                Comparator.comparing(entry -> -entry.getKey())
-                        )
+                        .sorted(Comparator.comparing(entry -> -entry.getKey()))
                         .limit(3)
                         .forEach(entry -> System.out.println(entry.getKey() + " - " + entry.getValue()));
 
