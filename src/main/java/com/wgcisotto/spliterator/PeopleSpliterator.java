@@ -22,13 +22,13 @@ public class PeopleSpliterator implements Spliterator<Person> {
             this.lineSpliterator.tryAdvance(line -> this.age = Integer.parseInt(line)) &&
             this.lineSpliterator.tryAdvance(line -> this.city = line)){
 
+
             Person p = new Person(name, age, city);
             action.accept(p);
 
             return true;
-        }else {
-            return false;
         }
+        return false;
 
     }
 
